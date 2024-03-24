@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="zh-Hant-TW">
 <head>
@@ -178,14 +179,25 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      該次作業程式碼，請放在 https://github.com/<span style="color:red;">你的帳號</span>/ct2024s/hw<span style="color:red;">02</span>/src/ 檔案夾。
+      Simple Baseline 的截圖，請放在 https://github.com/<span style="color:red;">你的帳號</span>/ct2024s/hw<span style="color:red;">02</span>/simple/ 檔案夾。<br>
+      Medium Baseline 的截圖，請放在 https://github.com/<span style="color:red;">你的帳號</span>/ct2024s/hw<span style="color:red;">02</span>/medium/ 檔案夾。<br>
+      Strong Baseline 的壓縮檔，請放在 https://github.com/<span style="color:red;">你的帳號</span>/ct2024s/hw<span style="color:red;">02</span>/strong/ 檔案夾。<br>
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      壓縮檔位置連結：
+      <input type="button" name="back" onclick="location.href='https://github.com/t112598018/ct2024s/tree/main/hw02/strong'" value="按我 ٩(｡・ω・｡)و 前往"> 
+    </div>
+</div>
+
+  <!-- ------------------------------------------------>
+  <div class="row hw12">
+    <div class="col-md-12 twenty">
+      心得：<br>
+      這次的任務是製作稿紙。為了方便我們收集手寫字的資料，我們需要快速地將手寫字的筆跡掃描成圖片，因此進行這個前置處理步驟，做完了這次作業後未來想要自己生成想要的字就可以自行產出稿紙蠻有趣的。
     </div>
   </div>
 
@@ -201,19 +213,19 @@
         </tr>
         <tr>
           <td rowspan="7" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
-          <td id='m1'>2</td>
-          <td>Simple baseline - 描述、描述、描述</td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
+          <td id='m1'>3</td>
+          <td>Simple baseline - 套件安裝完成截圖</td>
         </tr>
         <tr>
           <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
-          <td id='m2'>6</td>
-          <td>Medium baseline - 描述、描述、描述 </td>
+          <td id='m2'>4</td>
+          <td>Medium baseline - 稿紙.pdf成果截圖</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
-          <td id='m3'>2</td>
-          <td>Strong baseline - 描述、描述、描述 </td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
+          <td id='m3'>3</td>
+          <td>Strong baseline - 將pdf壓縮上傳並在作品集建立連結</td>
         </tr>
       </table>
     </div>
@@ -221,10 +233,14 @@
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
-    <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+    <div class="col-md-12 twenty">    
+      <img src="./simple/simple.jpg" width="1200px" height="600px"/>
+    </div>
+  </div>
+
+  <div class="row hw12">
+    <div class="col-md-12 twenty">    
+      <img src="./medium/medium.png" width="1200px" height="600px"/>      
     </div>
   </div>
 
@@ -233,43 +249,43 @@
   <!-- ------------------------------------------------>
 
 
-<script>
-  $(function() {
-    var f = function() {
-      $(this).next().text($(this).is(':checked') ? '做完' : '未做完');
-    };
-    $('input').change(f).trigger('change');
-  });
-
-  d3.select("#myCheckbox1").on("change",update);
-  d3.select("#myCheckbox2").on("change",update);
-  d3.select("#myCheckbox3").on("change",update);
-  d3.select("#myCheckbox4").on("change",update);
-  d3.select("#myCheckbox5").on("change",update);
-  d3.select("#myCheckbox6").on("change",update);
-  d3.select("#myCheckbox7").on("change",update);
-
-  update();
+  <script>
+    $(function() {
+      var f = function() {
+        $(this).next().text($(this).is(':checked') ? '做完' : '未做完');
+      };
+      $('input').change(f).trigger('change');
+    });
   
-  function update(){
-
-    var score = 0;
-
-    if (d3.select("#myCheckbox1").property("checked")){
-      score += parseInt(d3.select('#m1').html());
+    d3.select("#myCheckbox1").on("change",update);
+    d3.select("#myCheckbox2").on("change",update);
+    d3.select("#myCheckbox3").on("change",update);
+    d3.select("#myCheckbox4").on("change",update);
+    d3.select("#myCheckbox5").on("change",update);
+    d3.select("#myCheckbox6").on("change",update);
+    d3.select("#myCheckbox7").on("change",update);
+  
+    update();
+    
+    function update(){
+  
+      var score = 0;
+  
+      if (d3.select("#myCheckbox1").property("checked")){
+        score += parseInt(d3.select('#m1').html());
+      }
+  
+      if (d3.select("#myCheckbox2").property("checked")){
+        score += parseInt(d3.select('#m2').html());   
+      }
+  
+      if (d3.select("#myCheckbox3").property("checked")){
+        score += parseInt(d3.select('#m3').html());   
+      }
+  
+      d3.select("#myTotal").html(score);    
     }
-
-    if (d3.select("#myCheckbox2").property("checked")){
-      score += parseInt(d3.select('#m2').html());   
-    }
-
-    if (d3.select("#myCheckbox3").property("checked")){
-      score += parseInt(d3.select('#m3').html());   
-    }
-
-    d3.select("#myTotal").html(score);    
-  }
-</script>
+  </script>
 
 </body>
 </html>
